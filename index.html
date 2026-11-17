@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lightning Bansuri Studio | Virtual Bansuri</title>
+    <meta name="theme-color" content="#461db5">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%0A%3Cdefs%3E%0A%20%3ClinearGradient%20id%3D%22b%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23fff0b8%22%2F%3E%3Cstop%20offset%3D%22.25%22%20stop-color%3D%22%23d99a43%22%2F%3E%3Cstop%20offset%3D%22.58%22%20stop-color%3D%22%239b5a20%22%2F%3E%3Cstop%20offset%3D%22.82%22%20stop-color%3D%22%23f1c77b%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23754016%22%2F%3E%3C%2FlinearGradient%3E%0A%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23ffffff%22%20stop-opacity%3D%22.75%22%2F%3E%3Cstop%20offset%3D%22.45%22%20stop-color%3D%22%23fff%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23321505%22%20stop-opacity%3D%22.45%22%2F%3E%3C%2FlinearGradient%3E%0A%20%3Cfilter%20id%3D%22s%22%20x%3D%22-30%25%22%20y%3D%22-30%25%22%20width%3D%22160%25%22%20height%3D%22160%25%22%3E%3CfeGaussianBlur%20stdDeviation%3D%222%22%20%2F%3E%3C%2Ffilter%3E%0A%3C%2Fdefs%3E%0A%3Cg%20transform%3D%22rotate%28-28%2032%2032%29%22%3E%0A%20%3Crect%20x%3D%225%22%20y%3D%2224%22%20width%3D%2254%22%20height%3D%2216%22%20rx%3D%228%22%20fill%3D%22%231b1249%22%20opacity%3D%22.45%22%20filter%3D%22url%28%23s%29%22%20transform%3D%22translate%282%204%29%22%2F%3E%0A%20%3Crect%20x%3D%224%22%20y%3D%2222%22%20width%3D%2256%22%20height%3D%2216%22%20rx%3D%228%22%20fill%3D%22url%28%23b%29%22%20stroke%3D%22%2363340e%22%20stroke-width%3D%221.5%22%2F%3E%0A%20%3Crect%20x%3D%225%22%20y%3D%2223%22%20width%3D%2254%22%20height%3D%2214%22%20rx%3D%227%22%20fill%3D%22url%28%23g%29%22%2F%3E%0A%20%3Cpath%20d%3D%22M12%2024v12M51%2024v12%22%20stroke%3D%22%237c251d%22%20stroke-width%3D%222.5%22%20opacity%3D%22.9%22%2F%3E%0A%20%3Cg%20fill%3D%22%2327170e%22%20stroke%3D%22%23f6d18a%22%20stroke-width%3D%221%22%3E%0A%20%20%3Cellipse%20cx%3D%2222%22%20cy%3D%2230%22%20rx%3D%222.2%22%20ry%3D%223.1%22%2F%3E%3Cellipse%20cx%3D%2230%22%20cy%3D%2230%22%20rx%3D%222.2%22%20ry%3D%223.1%22%2F%3E%0A%20%20%3Cellipse%20cx%3D%2238%22%20cy%3D%2230%22%20rx%3D%222.2%22%20ry%3D%223.1%22%2F%3E%3Cellipse%20cx%3D%2246%22%20cy%3D%2230%22%20rx%3D%222.2%22%20ry%3D%223.1%22%2F%3E%0A%20%3C%2Fg%3E%0A%20%3Cpath%20d%3D%22M9%2025c13-4%2032-4%2046%200%22%20fill%3D%22none%22%20stroke%3D%22%23fff3cf%22%20stroke-width%3D%221.4%22%20opacity%3D%22.75%22%2F%3E%0A%3C%2Fg%3E%0A%3C%2Fsvg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #120d09;
+            color: #f5ebe1;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+            touch-action: manipulation;
+        }
+
+        /* Lightweight Bamboo Visual Bar */
+        .bamboo-tube {
+            background: linear-gradient(180deg, #5c3818 0%, #c69253 40%, #e3b77e 50%, #99652c 85%, #47290d 100%);
+            border: 2px solid #3b220c;
+        }
+
+        .thread-band {
+            background: repeating-linear-gradient(90deg, #7f1d1d 0px, #991b1b 3px, #1c1917 5px, #d97706 6px);
+        }
+
+        .flute-hole {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #140a04;
+            border: 2px solid #573314;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hole-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0%;
+            background: #f59e0b;
+        }
+
+        .hole-closed .hole-fill {
+            width: 100%;
+        }
+
+        .hole-half .hole-fill {
+            width: 50%;
+        }
+
+        /* Ultra-fast Zero-Lag Swara Buttons */
+        .swara-pad {
+            touch-action: none;
+            cursor: pointer;
+            transition: transform 0.04s linear, background-color 0.04s linear;
+            will-change: transform;
+        }
+
+        .swara-pad.playing {
+            transform: scale(0.95);
+            background-color: #d97706 !important;
+            border-color: #fef08a !important;
+            color: #000000 !important;
+        }
+
+        .swara-pad.playing .sub-label,
+        .swara-pad.playing .key-pill {
+            color: #1c1917 !important;
+            border-color: #1c1917 !important;
+            font-weight: 700;
+        }
+
+        input[type="range"] {
+            accent-color: #f59e0b;
+            cursor: pointer;
+        }
+
+
+        /* ===== Lightning Bansuri Studio: refreshed visual identity ===== */
+        :root {
+            color-scheme: dark;
+            --cyan: #67f2f2;
+            --cyan-soft: #b8ffff;
+            --violet: #461db5;
+            --violet-deep: #24105f;
+            --panel: rgba(13, 19, 48, .72);
+            --panel-border: rgba(164, 225, 255, .22);
+            --ink: #f5fbff;
+        }
+
+        /* Keep the background full-width while the page content stays centered */
+        html {
+            min-height: 100%;
+            background:
+                radial-gradient(ellipse at 12% 0%, rgba(92, 255, 246, .38), transparent 38%),
+                radial-gradient(ellipse at 92% 18%, rgba(177, 119, 255, .28), transparent 34%),
+                linear-gradient(135deg, #13dce0 0%, #087fca 26%, #3150c8 57%, #461db5 100%);
+            background-attachment: fixed;
+        }
+
+        body {
+            position: relative;
+            isolation: isolate;
+            max-width: 1180px !important;
+            padding-top: clamp(12px, 2.2vw, 26px) !important;
+            padding-bottom: 22px !important;
+            color: var(--ink) !important;
+            background: transparent !important;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            opacity: .17;
+            background-image: radial-gradient(rgba(255,255,255,.8) .7px, transparent .7px);
+            background-size: 22px 22px;
+            mask-image: linear-gradient(to bottom, black, transparent 85%);
+        }
+
+        /* Site identity / top header */
+        body > header {
+            position: relative;
+            overflow: hidden;
+            padding: 18px !important;
+            border: 1px solid rgba(190, 250, 255, .35) !important;
+            border-radius: 22px !important;
+            background: linear-gradient(120deg, rgba(8, 30, 67, .91), rgba(29, 18, 88, .88)) !important;
+            box-shadow: 0 18px 48px rgba(13, 12, 64, .28), inset 0 1px rgba(255,255,255,.12);
+            backdrop-filter: blur(18px);
+        }
+        body > header::after {
+            content: "";
+            position: absolute;
+            width: 230px; height: 230px;
+            right: -85px; top: -145px;
+            border-radius: 50%;
+            background: rgba(70, 230, 255, .2);
+            filter: blur(3px);
+            pointer-events: none;
+        }
+        body > header h1 {
+            color: #8ffaff !important;
+            font-size: clamp(1.25rem, 3vw, 1.8rem) !important;
+            letter-spacing: -.045em !important;
+            text-shadow: 0 0 24px rgba(73, 242, 255, .25);
+        }
+        body > header p { color: #c6d9ff !important; }
+        #keyBadge {
+            color: #d8fcff !important;
+            background: rgba(52, 220, 225, .13) !important;
+            border-color: rgba(103, 242, 242, .38) !important;
+        }
+
+        /* Header controls */
+        body > header .bg-stone-950 {
+            background: rgba(4, 12, 38, .55) !important;
+            border-color: rgba(156, 218, 255, .18) !important;
+        }
+        select, input[type="range"] { accent-color: var(--cyan) !important; }
+        select {
+            color: #c9fbff !important;
+            background-color: #101b49 !important;
+            border-color: rgba(111, 225, 255, .32) !important;
+        }
+        button {
+            transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+        }
+        button:hover { transform: translateY(-1px); }
+        body > header button, #droneBtn, #droneBtnMobile, #holdModeBtn {
+            border-color: rgba(130, 224, 255, .25) !important;
+            background-color: rgba(24, 44, 91, .8) !important;
+            color: #d7faff !important;
+        }
+        #openKeyMapBtn {
+            color: #071b39 !important;
+            background: linear-gradient(135deg, #91ffff, #57d8f4) !important;
+            border: 0 !important;
+            box-shadow: 0 6px 20px rgba(45, 220, 245, .2);
+        }
+
+        /* Status / instrument panel */
+        body > div.bg-stone-900 {
+            border: 1px solid var(--panel-border) !important;
+            border-radius: 20px !important;
+            background: linear-gradient(120deg, rgba(9, 25, 62, .88), rgba(30, 19, 86, .82)) !important;
+            box-shadow: 0 14px 38px rgba(17, 13, 70, .2);
+            backdrop-filter: blur(16px);
+        }
+        #noteBox {
+            background: linear-gradient(145deg, rgba(6, 18, 49, .95), rgba(31, 36, 103, .95)) !important;
+            border: 1px solid rgba(104, 238, 255, .38) !important;
+            box-shadow: inset 0 1px rgba(255,255,255,.1), 0 8px 24px rgba(0,0,0,.18);
+        }
+        #currentNoteTitle { color: #8dfaff !important; }
+        #currentNoteDesc { color: #f1f8ff !important; }
+        #fluteSpecsText, #currentFreqText { color: #adc8ec !important; }
+
+        /* Keep the bamboo flute as the warm visual centrepiece */
+        .bamboo-tube {
+            border: 2px solid #58300e !important;
+            box-shadow: inset 0 2px 5px rgba(255,255,255,.42), inset 0 -5px 8px rgba(36,13,0,.38), 0 8px 20px rgba(0,0,0,.25);
+        }
+        .flute-hole { box-shadow: inset 0 2px 5px rgba(0,0,0,.9), 0 1px 1px rgba(255,255,255,.22); }
+
+        /* Main instrument: deliberately separated from the site header */
+        body > main {
+            position: relative;
+            padding: clamp(12px, 2vw, 22px) !important;
+            border: 1px solid rgba(179, 240, 255, .34) !important;
+            border-radius: 24px !important;
+            background: linear-gradient(145deg, rgba(7, 17, 49, .94), rgba(23, 15, 75, .94)) !important;
+            box-shadow: 0 24px 60px rgba(15, 10, 67, .3), inset 0 1px rgba(255,255,255,.08);
+            backdrop-filter: blur(18px);
+        }
+        body > main::before {
+            content: "VIRTUAL BANSURI";
+            display: block;
+            margin: 0 0 13px 2px;
+            color: #83f5ff;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .2em;
+        }
+        .swara-pad {
+            min-height: 88px !important;
+            padding: 12px !important;
+            border-radius: 15px !important;
+            box-shadow: 0 5px 14px rgba(0,0,0,.16), inset 0 1px rgba(255,255,255,.06);
+        }
+        .swara-pad:hover {
+            border-color: rgba(129, 244, 255, .8) !important;
+            box-shadow: 0 8px 22px rgba(45, 204, 255, .13), inset 0 1px rgba(255,255,255,.1);
+        }
+        .swara-pad.playing {
+            background: linear-gradient(135deg, #9afff5, #49d8ed) !important;
+            border-color: #e6ffff !important;
+            color: #092044 !important;
+            box-shadow: 0 0 0 3px rgba(116, 246, 255, .18), 0 10px 28px rgba(40, 221, 255, .25);
+        }
+        .swara-pad.playing .sub-label, .swara-pad.playing .key-pill {
+            color: #092044 !important;
+            border-color: rgba(9,32,68,.3) !important;
+        }
+
+        /* Legend and footer */
+        body > footer {
+            border: 1px solid rgba(174, 228, 255, .22) !important;
+            border-radius: 16px !important;
+            background: rgba(8, 17, 53, .62) !important;
+            color: #c2d7f7 !important;
+            backdrop-filter: blur(12px);
+        }
+        body > footer .text-stone-200 { color: #effaff !important; }
+
+        /* Key mapping dialog */
+        #keyMapModal { background: rgba(4, 8, 32, .78) !important; }
+        #keyMapModal > div {
+            border: 1px solid rgba(128, 229, 255, .28) !important;
+            background: #11183f !important;
+            box-shadow: 0 24px 80px rgba(0,0,0,.5) !important;
+        }
+        #keyMapModal .bg-stone-950 { background: #0b1232 !important; }
+        #keyMapModal .bg-stone-950.border, #keyMapList > div {
+            border-color: rgba(139, 211, 255, .17) !important;
+        }
+
+        @media (max-width: 640px) {
+            body { padding-left: 10px !important; padding-right: 10px !important; }
+            body > header { padding: 13px !important; border-radius: 18px !important; }
+            body > header > div:first-child { align-items: flex-start; }
+            .swara-pad { min-height: 78px !important; padding: 9px !important; }
+            body > main { border-radius: 19px !important; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+        }
+
+    </style>
+</head>
+<body class="flex flex-col justify-between p-2.5 sm:p-4 max-w-6xl mx-auto gap-3">
+
+    <!-- Top Bar with Key Selector -->
+    <header class="bg-stone-900 border border-stone-800 rounded-xl p-3 flex flex-col md:flex-row md:items-center justify-between gap-3">
+        <div class="flex items-center justify-between">
+            <div>
+                <div class="flex items-center gap-2">
+                    <h1 class="text-lg sm:text-xl font-bold text-amber-400 tracking-tight">Lightning Bansuri Studio</h1>
+                    <span id="keyBadge" class="text-xs font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">Key: G Base</span>
+                </div>
+                <p class="text-xs text-stone-400">Select any Bansuri Key • Hold or Slide smoothly across notes</p>
+                <p class="text-xs text-stone-300 mt-0.5">
+                    Play <span class="text-orange-500 font-bold">Bansuri</span>
+                </p>
+            </div>
+
+            <button id="droneBtnMobile" class="md:hidden px-3 py-1.5 rounded-lg bg-stone-800 border border-stone-700 text-xs font-semibold text-amber-300">
+                Drone: OFF
+            </button>
+        </div>
+
+        <!-- Key Selector & Sliders -->
+        <div class="flex flex-col sm:flex-row flex-wrap gap-3 bg-stone-950 p-2.5 rounded-lg border border-stone-800 items-center">
+            <!-- Bansuri Key Selector Dropdown -->
+            <div class="flex flex-col w-full sm:w-auto">
+                <span class="text-[10px] text-stone-400 mb-1 font-mono uppercase tracking-wider">Select Bansuri Key</span>
+                <select id="bansuriKeySelect" class="bg-stone-900 border border-stone-700 text-amber-400 font-bold text-sm rounded-lg px-3 py-2 outline-none focus:border-amber-500">
+                    <option value="C">C Natural (Medium)</option>
+                    <option value="C#">C# / C Sharp (Popular)</option>
+                    <option value="D">D Natural (Male)</option>
+                    <option value="D#">D# / D Sharp</option>
+                    <option value="E">E Natural (Standard)</option>
+                    <option value="F">F Natural (Carnatic/Light)</option>
+                    <option value="F#">F# / F Sharp</option>
+                    <option value="G" selected>G Natural (Deep Bass)</option>
+                    <option value="G#">G# / G Sharp</option>
+                    <option value="A">A Natural (Contrabass)</option>
+                    <option value="A#">A# / A Sharp</option>
+                    <option value="B">B Natural (Deepest)</option>
+                </select>
+            </div>
+
+            <!-- Sliders (Echo Removed, Volume Boost Added) -->
+            <div class="grid grid-cols-3 gap-2 w-full sm:w-auto">
+                <div class="flex flex-col">
+                    <div class="flex justify-between text-[11px] text-stone-300 mb-1">
+                        <span>Volume</span>
+                        <span id="volLabel" class="text-amber-400 font-mono">100%</span>
+                    </div>
+                    <input id="volSlider" type="range" min="20" max="150" value="100">
+                </div>
+
+                <div class="flex flex-col">
+                    <div class="flex justify-between text-[11px] text-stone-300 mb-1">
+                        <span>Air</span>
+                        <span id="airLabel" class="text-amber-400 font-mono">35%</span>
+                    </div>
+                    <input id="airSlider" type="range" min="0" max="100" value="35">
+                </div>
+
+                <div class="flex flex-col">
+                    <div class="flex justify-between text-[11px] text-stone-300 mb-1">
+                        <span>Glide</span>
+                        <span id="glideLabel" class="text-amber-400 font-mono">50ms</span>
+                    </div>
+                    <input id="glideSlider" type="range" min="10" max="220" value="50">
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2 w-full sm:w-auto">
+                <button id="droneBtn" class="hidden md:block py-2 px-3 rounded-lg bg-stone-800 hover:bg-stone-700 border border-stone-700 text-xs font-semibold text-amber-300">
+                    Drone: OFF
+                </button>
+                <button id="holdModeBtn" class="flex-1 sm:flex-none py-2 px-3 rounded-lg bg-stone-800 hover:bg-stone-700 border border-stone-700 text-xs font-semibold text-stone-200">
+                    Mode: Hold
+                </button>
+                <button id="openKeyMapBtn" class="flex-1 sm:flex-none py-2 px-3 rounded-lg bg-amber-600/20 hover:bg-amber-600/30 border border-amber-500/50 text-xs font-bold text-amber-300">
+                    Key Mapping
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Status Bar & Bamboo Visual -->
+    <div class="bg-stone-900 border border-stone-800 rounded-xl p-3 flex flex-col lg:flex-row items-center justify-between gap-3">
+        <!-- Current Playing Note Display -->
+        <div class="flex items-center gap-3 w-full lg:w-auto">
+            <div id="noteBox" class="w-14 h-14 rounded-xl bg-stone-950 border border-stone-700 flex flex-col items-center justify-center shrink-0">
+                <span id="currentNoteTitle" class="text-lg font-extrabold text-amber-400">—</span>
+                <span id="currentFreqText" class="text-[10px] font-mono text-stone-400">READY</span>
+            </div>
+            <div>
+                <div id="currentNoteDesc" class="text-sm sm:text-base font-bold text-stone-100">Press & Hold any Note Below</div>
+                <div id="fluteSpecsText" class="text-xs text-stone-400">All 24 Swaras calculated accurately for selected Bansuri Key</div>
+            </div>
+        </div>
+
+        <!-- 6-Hole Bamboo Tube -->
+        <div class="w-full lg:w-auto overflow-x-auto">
+            <div class="bamboo-tube h-11 rounded-full px-4 flex items-center justify-between min-w-[390px] sm:min-w-[460px] gap-2">
+                <div class="thread-band w-4 h-full"></div>
+                <div class="flex items-center gap-1">
+                    <div id="blowDot" class="w-5 h-5 rounded-full bg-black border border-amber-900"></div>
+                    <span class="text-[10px] font-bold text-stone-900">BLOW</span>
+                </div>
+                <div class="thread-band w-5 h-full"></div>
+
+                <!-- 6 Holes -->
+                <div class="flex items-center justify-around flex-1 px-2">
+                    <div id="hole-0" class="flute-hole" title="Hole 1"><div class="hole-fill"></div></div>
+                    <div id="hole-1" class="flute-hole" title="Hole 2"><div class="hole-fill"></div></div>
+                    <div id="hole-2" class="flute-hole" title="Hole 3"><div class="hole-fill"></div></div>
+                    <div class="thread-band w-2 h-11"></div>
+                    <div id="hole-3" class="flute-hole" title="Hole 4"><div class="hole-fill"></div></div>
+                    <div id="hole-4" class="flute-hole" title="Hole 5"><div class="hole-fill"></div></div>
+                    <div id="hole-5" class="flute-hole" title="Hole 6"><div class="hole-fill"></div></div>
+                </div>
+
+                <div class="thread-band w-4 h-full"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ALL 24 SWARAS CONTINUOUS BOARD -->
+    <main class="bg-stone-900 border border-stone-800 rounded-xl p-2.5 sm:p-4">
+        <div id="allSwarasGrid" class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2 sm:gap-2.5">
+            <!-- Populated dynamically by JS -->
+        </div>
+    </main>
+
+    <!-- Legend -->
+    <footer class="bg-stone-900/70 border border-stone-800 rounded-xl p-2.5 text-xs text-stone-400 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div class="flex items-center gap-4">
+            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-stone-800 border border-amber-500/60 inline-block"></span> Pure (Shuddha)</span>
+            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-stone-800 border border-sky-500/60 inline-block"></span> Flat (Komal)</span>
+            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-stone-800 border border-rose-500/60 inline-block"></span> Sharp (Teevra Ma)</span>
+        </div>
+        <div class="font-medium text-stone-200 text-center">
+            Developed by Soham Deshmukh | <span class="text-orange-500 font-bold">Bansuri</span>
+        </div>
+    </footer>
+
+    <!-- KEY MAPPING MODAL -->
+    <div id="keyMapModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-3">
+        <div class="bg-stone-900 border border-stone-700 rounded-2xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+            <!-- Modal Header -->
+            <div class="p-4 border-b border-stone-800 flex flex-wrap items-center justify-between gap-2 bg-stone-950">
+                <div>
+                    <h2 class="text-base sm:text-lg font-bold text-amber-400">Key Mapping</h2>
+                    <p class="text-xs text-stone-400">Click any Swar box below, then press a key (<span class="font-mono text-stone-300">1234567890-=qwertyuiop[]asdfghjkl;'zxcvbnm,./</span>) or click Clear so it has no key.</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button id="clearAllKeysBtn" class="px-3 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 border border-stone-700 text-xs font-semibold text-stone-300">
+                        Unmap All
+                    </button>
+                    <button id="resetDefaultKeysBtn" class="px-3 py-1.5 rounded-lg bg-amber-600/20 hover:bg-amber-600/30 border border-amber-500/50 text-xs font-bold text-amber-300">
+                        Reset to Default
+                    </button>
+                    <button id="closeKeyMapBtn" class="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-black text-xs font-bold">
+                        Done
+                    </button>
+                </div>
+            </div>
+
+            <!-- Modal Body: 24 Swaras Key Assignment Grid -->
+            <div class="p-4 overflow-y-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5" id="keyMapList">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /*************************************************************************
+         * 1. ALLOWED KEYS & BANSURI KEY FREQUENCY MAP (Base Sa Frequencies)
+         *************************************************************************/
+        const ALLOWED_KEYS_STR = "1234567890-=qwertyuiop[]asdfghjkl;'zxcvbnm,./";
+        const ALLOWED_KEYS = new Set(ALLOWED_KEYS_STR.split(''));
+        const STORAGE_KEY = "soham_bansuri_keymap_v1";
+
+        const BANSURI_KEYS = {
+            "C":  { name: "C Natural", saFreq: 261.63 },
+            "C#": { name: "C# Sharp",  saFreq: 277.18 },
+            "D":  { name: "D Natural", saFreq: 293.66 },
+            "D#": { name: "D# Sharp",  saFreq: 311.13 },
+            "E":  { name: "E Natural", saFreq: 329.63 },
+            "F":  { name: "F Natural", saFreq: 349.23 },
+            "F#": { name: "F# Sharp",  saFreq: 369.99 },
+            "G":  { name: "G Natural", saFreq: 196.00 }, // Deep Bass G
+            "G#": { name: "G# Sharp",  saFreq: 207.65 },
+            "A":  { name: "A Natural", saFreq: 220.00 },
+            "A#": { name: "A# Sharp",  saFreq: 233.08 },
+            "B":  { name: "B Natural", saFreq: 246.94 }
+        };
+
+        const SWARA_TEMPLATES = [
+            { id: 0,  label: "Low Pa",        sub: "Shuddha", semitones: -5, type: "shuddha", defaultKey: "z", holes: [1,1,1,1,1,1] },
+            { id: 1,  label: "Low Komal Dha", sub: "Flat d",  semitones: -4, type: "komal",   defaultKey: "x", holes: [1,1,1,1,1,0.5] },
+            { id: 2,  label: "Low Dha",       sub: "Shuddha", semitones: -3, type: "shuddha", defaultKey: "c", holes: [1,1,1,1,1,0] },
+            { id: 3,  label: "Low Komal Ni",  sub: "Flat n",  semitones: -2, type: "komal",   defaultKey: "v", holes: [1,1,1,1,0.5,0] },
+            { id: 4,  label: "Low Ni",        sub: "Shuddha", semitones: -1, type: "shuddha", defaultKey: "b", holes: [1,1,1,1,0,0] },
+
+            { id: 5,  label: "Sa",            sub: "Tonic S", semitones: 0,  type: "shuddha", defaultKey: "a", holes: [1,1,1,0,0,0] },
+            { id: 6,  label: "Komal Re",      sub: "Flat r",  semitones: 1,  type: "komal",   defaultKey: "w", holes: [1,1,0.5,0,0,0] },
+            { id: 7,  label: "Re",            sub: "Shuddha", semitones: 2,  type: "shuddha", defaultKey: "s", holes: [1,1,0,0,0,0] },
+            { id: 8,  label: "Komal Ga",      sub: "Flat g",  semitones: 3,  type: "komal",   defaultKey: "e", holes: [1,0.5,0,0,0,0] },
+            { id: 9,  label: "Ga",            sub: "Shuddha", semitones: 4,  type: "shuddha", defaultKey: "d", holes: [1,0,0,0,0,0] },
+            { id: 10, label: "Ma",            sub: "Shuddha", semitones: 5,  type: "shuddha", defaultKey: "f", holes: [0.5,0,0,0,0,0] },
+            { id: 11, label: "Teevra Ma",     sub: "Sharp M", semitones: 6,  type: "teevra",  defaultKey: "t", holes: [0,0,0,0,0,0] },
+            { id: 12, label: "Pa",            sub: "Shuddha", semitones: 7,  type: "shuddha", defaultKey: "g", holes: [1,1,1,1,1,1] },
+            { id: 13, label: "Komal Dha",     sub: "Flat d",  semitones: 8,  type: "komal",   defaultKey: "y", holes: [1,1,1,1,1,0.5] },
+            { id: 14, label: "Dha",           sub: "Shuddha", semitones: 9,  type: "shuddha", defaultKey: "h", holes: [1,1,1,1,1,0] },
+            { id: 15, label: "Komal Ni",      sub: "Flat n",  semitones: 10, type: "komal",   defaultKey: "u", holes: [1,1,1,1,0.5,0] },
+            { id: 16, label: "Ni",            sub: "Shuddha", semitones: 11, type: "shuddha", defaultKey: "j", holes: [1,1,1,1,0,0] },
+
+            { id: 17, label: "High Sa",        sub: "Upper S'", semitones: 12, type: "shuddha", defaultKey: "k", holes: [1,1,1,0,0,0] },
+            { id: 18, label: "High Komal Re",  sub: "Flat r'",  semitones: 13, type: "komal",   defaultKey: "o", holes: [1,1,0.5,0,0,0] },
+            { id: 19, label: "High Re",        sub: "Upper R'", semitones: 14, type: "shuddha", defaultKey: "l", holes: [1,1,0,0,0,0] },
+            { id: 20, label: "High Komal Ga",  sub: "Flat g'",  semitones: 15, type: "komal",   defaultKey: "p", holes: [1,0.5,0,0,0,0] },
+            { id: 21, label: "High Ga",        sub: "Upper G'", semitones: 16, type: "shuddha", defaultKey: ";", holes: [1,0,0,0,0,0] },
+            { id: 22, label: "High Ma",        sub: "Upper m'", semitones: 17, type: "shuddha", defaultKey: "'", holes: [0.5,0,0,0,0,0] },
+            { id: 23, label: "High Teevra Ma", sub: "Sharp M'", semitones: 18, type: "teevra",  defaultKey: "]", holes: [0,0,0,0,0,0] }
+        ];
+
+        // Load saved key mapping from localStorage or use defaults
+        let userKeyMap = {};
+        function loadKeyMappings() {
+            try {
+                const raw = localStorage.getItem(STORAGE_KEY);
+                if (raw) {
+                    const parsed = JSON.parse(raw);
+                    SWARA_TEMPLATES.forEach(t => {
+                        if (Object.prototype.hasOwnProperty.call(parsed, t.id)) {
+                            userKeyMap[t.id] = parsed[t.id]; // Can be "" (unmapped) or a valid key
+                        } else {
+                            userKeyMap[t.id] = t.defaultKey;
+                        }
+                    });
+                    return;
+                }
+            } catch (e) {}
+            resetKeyMappingsToDefault(false);
+        }
+
+        function saveKeyMappings() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(userKeyMap));
+            } catch (e) {}
+        }
+
+        function resetKeyMappingsToDefault(save = true) {
+            SWARA_TEMPLATES.forEach(t => {
+                userKeyMap[t.id] = t.defaultKey;
+            });
+            if (save) saveKeyMappings();
+        }
+
+        loadKeyMappings();
+
+        let currentKey = "G";
+        let SWARAS = [];
+
+        function generateSwaraDataForCurrentKey() {
+            const baseSa = BANSURI_KEYS[currentKey].saFreq;
+            SWARAS = SWARA_TEMPLATES.map(t => {
+                const freq = baseSa * Math.pow(2, t.semitones / 12);
+                return {
+                    ...t,
+                    key: userKeyMap[t.id] ?? "",
+                    freq: freq,
+                    cutoff: Math.min(4800, Math.max(800, freq * 4.0)),
+                    subMix: 0.95,
+                    airMix: 0.28
+                };
+            });
+        }
+        generateSwaraDataForCurrentKey();
+
+        /*************************************************************************
+         * 2. BANSURI AUDIO SYNTHESIS ENGINE (ORIGINAL SOUND + HIGH PHONE VOLUME)
+         *************************************************************************/
+        class BansuriEngine {
+            constructor() {
+                this.ctx = null;
+                this.isPlaying = false;
+                this.airSetting = 0.35;
+                this.glideTime = 0.040;
+                this.volumeSetting = 1.0;
+                this.droneActive = false;
+                this.droneOscs = [];
+                this.suspendTimer = null;
+            }
+
+            init() {
+                if (this.suspendTimer) {
+                    clearTimeout(this.suspendTimer);
+                    this.suspendTimer = null;
+                }
+
+                if (this.ctx) {
+                    if (this.ctx.state === 'suspended') this.ctx.resume();
+                    return;
+                }
+
+                const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                this.ctx = new AudioCtx({ latencyHint: 'interactive' });
+
+                // Dynamics Compressor to prevent clipping while maximizing perceived loudness on phones
+                this.compressor = this.ctx.createDynamicsCompressor();
+                this.compressor.threshold.value = -16;
+                this.compressor.knee.value = 4;
+                this.compressor.ratio.value = 12;
+                this.compressor.attack.value = 0.003;
+                this.compressor.release.value = 0.15;
+
+                this.master = this.ctx.createGain();
+                this.master.gain.value = 3.2 * this.volumeSetting; // High gain boost for mobile devices
+
+                this.compressor.connect(this.master);
+                this.master.connect(this.ctx.destination);
+
+                // Open Lowpass Wall for clear rich audio
+                this.bambooLowpass = this.ctx.createBiquadFilter();
+                this.bambooLowpass.type = 'lowpass';
+                this.bambooLowpass.frequency.value = 2800;
+                this.bambooLowpass.Q.value = 0.8;
+
+                // Resonance Shelf
+                this.bassBody = this.ctx.createBiquadFilter();
+                this.bassBody.type = 'lowshelf';
+                this.bassBody.frequency.value = 250;
+                this.bassBody.gain.value = 6.0;
+
+                // Envelope (Starts at exact 0 so Chrome does not show sound icon when idle)
+                this.envGain = this.ctx.createGain();
+                this.envGain.gain.value = 0;
+
+                // 1. Fundamental Sine
+                this.fundOsc = this.ctx.createOscillator();
+                this.fundOsc.type = 'sine';
+                this.fundOsc.frequency.value = 196.00;
+                this.fundGain = this.ctx.createGain();
+                this.fundGain.gain.value = 0.95;
+
+                // 2. Harmonic Wave
+                const real = new Float32Array([0, 0, 0, 0]);
+                const imag = new Float32Array([0, 0.70, 0.40, 0.15]);
+                const woodWave = this.ctx.createPeriodicWave(real, imag);
+
+                this.woodOsc = this.ctx.createOscillator();
+                this.woodOsc.setPeriodicWave(woodWave);
+                this.woodOsc.frequency.value = 196.00;
+                this.woodGain = this.ctx.createGain();
+                this.woodGain.gain.value = 0.65;
+
+                // 3. Air Turbulence Noise
+                this.noiseNode = this.ctx.createBufferSource();
+                this.noiseNode.buffer = this.createAirBuffer();
+                this.noiseNode.loop = true;
+
+                this.airFilter = this.ctx.createBiquadFilter();
+                this.airFilter.type = 'bandpass';
+                this.airFilter.frequency.value = 392;
+                this.airFilter.Q.value = 1.2;
+
+                this.airGain = this.ctx.createGain();
+                this.airGain.gain.value = 0.05;
+
+                // Routing (Echo removed, original Bansuri tone preserved)
+                this.fundOsc.connect(this.fundGain);
+                this.fundGain.connect(this.envGain);
+
+                this.woodOsc.connect(this.woodGain);
+                this.woodGain.connect(this.envGain);
+
+                this.noiseNode.connect(this.airFilter);
+                this.airFilter.connect(this.airGain);
+                this.airGain.connect(this.envGain);
+
+                this.envGain.connect(this.bassBody);
+                this.bassBody.connect(this.bambooLowpass);
+                this.bambooLowpass.connect(this.compressor);
+
+                this.fundOsc.start();
+                this.woodOsc.start();
+                this.noiseNode.start();
+            }
+
+            createAirBuffer() {
+                const len = this.ctx.sampleRate * 2;
+                const buf = this.ctx.createBuffer(1, len, this.ctx.sampleRate);
+                const data = buf.getChannelData(0);
+                let last = 0;
+                for (let i = 0; i < len; i++) {
+                    const white = Math.random() * 2 - 1;
+                    last = (last + (0.1 * white)) / 1.1;
+                    data[i] = last * 0.45;
+                }
+                return buf;
+            }
+
+            play(swara) {
+                this.init();
+                const now = this.ctx.currentTime;
+                const freq = swara.freq;
+
+                this.fundOsc.frequency.cancelScheduledValues(now);
+                this.woodOsc.frequency.cancelScheduledValues(now);
+                this.bambooLowpass.frequency.cancelScheduledValues(now);
+                this.envGain.gain.cancelScheduledValues(now);
+
+                if (!this.isPlaying) {
+                    this.fundOsc.frequency.setValueAtTime(freq, now);
+                    this.woodOsc.frequency.setValueAtTime(freq, now);
+                    this.bambooLowpass.frequency.setValueAtTime(swara.cutoff, now);
+
+                    this.envGain.gain.setValueAtTime(Math.max(0.0001, this.envGain.gain.value), now);
+                    this.envGain.gain.setTargetAtTime(0.95, now, 0.01);
+                } else {
+                    const glideConstant = Math.max(0.003, this.glideTime / 3.0);
+                    this.fundOsc.frequency.setValueAtTime(this.fundOsc.frequency.value, now);
+                    this.woodOsc.frequency.setValueAtTime(this.woodOsc.frequency.value, now);
+                    this.fundOsc.frequency.setTargetAtTime(freq, now, glideConstant);
+                    this.woodOsc.frequency.setTargetAtTime(freq, now, glideConstant);
+                    this.bambooLowpass.frequency.setTargetAtTime(swara.cutoff, now, 0.02);
+
+                    this.envGain.gain.setValueAtTime(Math.max(0.6, this.envGain.gain.value), now);
+                    this.envGain.gain.setTargetAtTime(0.95, now, 0.01);
+                }
+
+                this.fundGain.gain.setTargetAtTime(0.95, now, 0.01);
+                this.airFilter.frequency.setTargetAtTime(freq * 1.9, now, 0.02);
+                this.airGain.gain.setTargetAtTime(swara.airMix * this.airSetting * 1.2, now, 0.01);
+
+                this.isPlaying = true;
+            }
+
+            stop() {
+                if (!this.ctx) return;
+                this.isPlaying = false;
+                const now = this.ctx.currentTime;
+                this.envGain.gain.cancelScheduledValues(now);
+                this.envGain.gain.setValueAtTime(this.envGain.gain.value, now);
+                this.envGain.gain.setTargetAtTime(0, now, 0.018);
+
+                this.scheduleSuspendIfIdle();
+            }
+
+            scheduleSuspendIfIdle() {
+                if (this.suspendTimer) {
+                    clearTimeout(this.suspendTimer);
+                }
+                // Suspends AudioContext when nothing is pressed so Chrome tab speaker icon disappears
+                this.suspendTimer = setTimeout(() => {
+                    if (!this.isPlaying && !this.droneActive && this.ctx && this.ctx.state === 'running') {
+                        this.envGain.gain.value = 0;
+                        this.ctx.suspend();
+                    }
+                }, 120);
+            }
+
+            setVolume(multiplier) {
+                this.volumeSetting = multiplier;
+                if (this.ctx && this.master) {
+                    this.master.gain.setTargetAtTime(3.2 * this.volumeSetting, this.ctx.currentTime, 0.02);
+                }
+            }
+
+            toggleDrone() {
+                this.init();
+                if (this.droneActive) {
+                    const now = this.ctx.currentTime;
+                    this.droneGain.gain.setTargetAtTime(0, now, 0.06);
+                    const oldOscs = this.droneOscs;
+                    this.droneOscs = [];
+                    this.droneActive = false;
+                    setTimeout(() => {
+                        oldOscs.forEach(o => { try { o.stop(); o.disconnect(); } catch (e) {} });
+                        this.scheduleSuspendIfIdle();
+                    }, 220);
+                    return false;
+                } else {
+                    const now = this.ctx.currentTime;
+                    this.droneGain = this.ctx.createGain();
+                    this.droneGain.gain.setValueAtTime(0.001, now);
+                    this.droneGain.gain.linearRampToValueAtTime(0.22, now + 0.3);
+
+                    const lp = this.ctx.createBiquadFilter();
+                    lp.type = 'lowpass';
+                    lp.frequency.value = BANSURI_KEYS[currentKey].saFreq * 2.5;
+
+                    this.droneGain.connect(lp);
+                    lp.connect(this.compressor);
+
+                    const sa = BANSURI_KEYS[currentKey].saFreq;
+                    const pa = sa * 1.5;
+                    const lowSa = sa / 2;
+
+                    [lowSa, pa, sa].forEach((f, idx) => {
+                        const o = this.ctx.createOscillator();
+                        o.type = idx === 0 ? 'sine' : 'triangle';
+                        o.frequency.value = f;
+                        const g = this.ctx.createGain();
+                        g.gain.value = idx === 0 ? 0.7 : 0.4;
+                        o.connect(g);
+                        g.connect(this.droneGain);
+                        o.start();
+                        this.droneOscs.push(o);
+                    });
+
+                    this.droneActive = true;
+                    return true;
+                }
+            }
+        }
+
+        const engine = new BansuriEngine();
+
+        /*************************************************************************
+         * 3. RENDER UI SWARA PADS
+         *************************************************************************/
+        const gridEl = document.getElementById('allSwarasGrid');
+        const currentNoteTitle = document.getElementById('currentNoteTitle');
+        const currentFreqText = document.getElementById('currentFreqText');
+        const currentNoteDesc = document.getElementById('currentNoteDesc');
+        const fluteSpecsText = document.getElementById('fluteSpecsText');
+        const keyBadge = document.getElementById('keyBadge');
+        const blowDot = document.getElementById('blowDot');
+        const holeEls = [0, 1, 2, 3, 4, 5].map(i => document.getElementById(`hole-${i}`));
+
+        const padMap = new Map();
+        let activeNoteId = null;
+        let latchMode = false;
+
+        function getCardColor(type, isTonic) {
+            if (isTonic) return 'bg-amber-950/70 border-2 border-amber-400 text-amber-100';
+            if (type === 'komal') return 'bg-stone-950 border border-sky-500/50 text-sky-100';
+            if (type === 'teevra') return 'bg-stone-950 border border-rose-500/50 text-rose-100';
+            return 'bg-stone-950 border border-amber-600/50 text-amber-50';
+        }
+
+        function buildGrid() {
+            gridEl.innerHTML = '';
+            padMap.clear();
+
+            SWARAS.forEach(s => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.dataset.id = s.id;
+                const isTonic = (s.id === 5 || s.id === 17);
+                btn.className = `swara-pad rounded-xl p-2.5 sm:p-3 flex flex-col justify-between min-h-[78px] sm:min-h-[88px] text-left ${getCardColor(s.type, isTonic)}`;
+
+                const keyLabel = s.key ? `[${s.key.toUpperCase()}]` : `—`;
+
+                btn.innerHTML = `
+                    <div class="w-full flex items-center justify-between text-[10px] opacity-75 font-mono pointer-events-none">
+                        <span class="sub-label">${s.sub}</span>
+                        <span class="sub-label">Key ${currentKey}</span>
+                    </div>
+                    <div class="text-sm sm:text-base font-extrabold tracking-tight my-1 leading-tight pointer-events-none">
+                        ${s.label}
+                    </div>
+                    <div class="w-full flex items-center justify-between text-[10px] opacity-75 font-mono pointer-events-none">
+                        <span class="sub-label">${Math.round(s.freq)} Hz</span>
+                        <span class="key-pill px-1.5 py-0.5 rounded bg-stone-900/80 border border-stone-700 text-amber-300 font-bold">${keyLabel}</span>
+                    </div>
+                `;
+
+                gridEl.appendChild(btn);
+                padMap.set(s.id, btn);
+            });
+
+            keyBadge.textContent = `Key: ${currentKey}`;
+            fluteSpecsText.textContent = `Bansuri Key ${BANSURI_KEYS[currentKey].name} (Sa = ${BANSURI_KEYS[currentKey].saFreq} Hz)`;
+
+            if (activeNoteId !== null && padMap.has(activeNoteId)) {
+                padMap.get(activeNoteId).classList.add('playing');
+            }
+        }
+
+        buildGrid();
+
+        function updateVisuals(swara) {
+            if (activeNoteId !== null && padMap.has(activeNoteId)) {
+                padMap.get(activeNoteId).classList.remove('playing');
+            }
+
+            if (!swara) {
+                activeNoteId = null;
+                currentNoteTitle.textContent = '—';
+                currentFreqText.textContent = 'SILENT';
+                currentNoteDesc.textContent = latchMode ? 'Tap any Swara to Hold' : 'Press & Hold or Slide Across Any Swara';
+                blowDot.className = 'w-5 h-5 rounded-full bg-black border border-amber-900';
+                for (let i = 0; i < 6; i++) holeEls[i].className = 'flute-hole';
+                return;
+            }
+
+            activeNoteId = swara.id;
+            const pad = padMap.get(swara.id);
+            if (pad) pad.classList.add('playing');
+
+            currentNoteTitle.textContent = swara.label.split(' ').pop();
+            currentFreqText.textContent = `${Math.round(swara.freq)}Hz`;
+            currentNoteDesc.textContent = `${swara.label} (${swara.sub}) • Key ${currentKey} Bansuri`;
+            blowDot.className = 'w-5 h-5 rounded-full bg-amber-400 border border-white';
+
+            for (let i = 0; i < 6; i++) {
+                const v = swara.holes[i];
+                holeEls[i].className = v === 1 ? 'flute-hole hole-closed' : (v === 0.5 ? 'flute-hole hole-half' : 'flute-hole');
+            }
+        }
+
+        function startNote(id) {
+            const swara = SWARAS[id];
+            if (!swara) return;
+            updateVisuals(swara);
+            engine.play(swara);
+        }
+
+        function stopNote() {
+            updateVisuals(null);
+            engine.stop();
+        }
+
+        /*************************************************************************
+         * 4. RELIABLE MOBILE TOUCH & DESKTOP MOUSE HANDLING
+         *    - Fixes mobile issue where switching swar sometimes failed to play
+         *************************************************************************/
+        let mouseDown = false;
+
+        function getSwaraButtonFromPoint(x, y) {
+            const el = document.elementFromPoint(x, y);
+            return el ? el.closest('.swara-pad') : null;
+        }
+
+        // Dedicated Touch Events for 100% reliable mobile responsiveness
+        gridEl.addEventListener('touchstart', (e) => {
+            const touch = e.changedTouches[0];
+            if (!touch) return;
+            const btn = getSwaraButtonFromPoint(touch.clientX, touch.clientY);
+            if (!btn) return;
+            e.preventDefault();
+
+            const id = Number(btn.dataset.id);
+            if (latchMode) {
+                if (activeNoteId === id) stopNote();
+                else startNote(id);
+                return;
+            }
+            startNote(id);
+        }, { passive: false });
+
+        gridEl.addEventListener('touchmove', (e) => {
+            if (latchMode) return;
+            e.preventDefault();
+            // Use the most recent active finger position
+            const touch = e.touches[e.touches.length - 1];
+            if (!touch) return;
+            const btn = getSwaraButtonFromPoint(touch.clientX, touch.clientY);
+            if (btn) {
+                const id = Number(btn.dataset.id);
+                if (id !== activeNoteId || !engine.isPlaying) {
+                    startNote(id);
+                }
+            }
+        }, { passive: false });
+
+        function handleTouchEnd(e) {
+            if (latchMode) return;
+            if (e.touches.length === 0) {
+                stopNote();
+            } else {
+                // If another finger is still on a button, switch back to that finger's note
+                const remainingTouch = e.touches[e.touches.length - 1];
+                const btn = getSwaraButtonFromPoint(remainingTouch.clientX, remainingTouch.clientY);
+                if (btn) {
+                    const id = Number(btn.dataset.id);
+                    startNote(id);
+                } else {
+                    stopNote();
+                }
+            }
+        }
+
+        gridEl.addEventListener('touchend', handleTouchEnd);
+        gridEl.addEventListener('touchcancel', handleTouchEnd);
+
+        // Desktop Mouse Events
+        gridEl.addEventListener('mousedown', (e) => {
+            if (e.button !== 0) return;
+            const btn = e.target.closest('.swara-pad');
+            if (!btn) return;
+            e.preventDefault();
+
+            const id = Number(btn.dataset.id);
+            if (latchMode) {
+                if (activeNoteId === id) stopNote();
+                else startNote(id);
+                return;
+            }
+
+            mouseDown = true;
+            startNote(id);
+        });
+
+        gridEl.addEventListener('mousemove', (e) => {
+            if (!mouseDown || latchMode) return;
+            const btn = getSwaraButtonFromPoint(e.clientX, e.clientY);
+            if (btn) {
+                const id = Number(btn.dataset.id);
+                if (id !== activeNoteId || !engine.isPlaying) {
+                    startNote(id);
+                }
+            }
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (mouseDown && !latchMode) {
+                mouseDown = false;
+                stopNote();
+            }
+        });
+
+        /*************************************************************************
+         * 5. CUSTOM KEY MAPPING UI & KEYBOARD PLAYBACK
+         *************************************************************************/
+        const keyMapModal = document.getElementById('keyMapModal');
+        const keyMapList = document.getElementById('keyMapList');
+        let listeningSwaraId = null;
+
+        function renderKeyMapModal() {
+            keyMapList.innerHTML = '';
+            SWARAS.forEach(s => {
+                const isListening = listeningSwaraId === s.id;
+                const row = document.createElement('div');
+                row.className = `flex items-center justify-between p-2.5 rounded-xl border ${
+                    isListening ? 'bg-amber-950/60 border-amber-400' : 'bg-stone-950 border-stone-800'
+                }`;
+
+                const mappedText = isListening
+                    ? 'Press any key...'
+                    : (s.key ? `Key: ${s.key.toUpperCase()}` : 'Not Mapped');
+
+                row.innerHTML = `
+                    <div>
+                        <div class="text-xs font-bold text-stone-100">${s.label}</div>
+                        <div class="text-[10px] text-stone-400">${s.sub}</div>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                        <button type="button" data-map-id="${s.id}" class="assign-key-btn px-2.5 py-1.5 rounded-lg text-xs font-mono font-bold border ${
+                            isListening
+                                ? 'bg-amber-400 text-black border-white animate-pulse'
+                                : (s.key ? 'bg-stone-800 text-amber-300 border-stone-700 hover:border-amber-400' : 'bg-stone-900 text-stone-500 border-stone-800 hover:border-stone-600')
+                        }">
+                            ${mappedText}
+                        </button>
+                        <button type="button" data-clear-id="${s.id}" title="Unmap Key" class="clear-key-btn px-2 py-1.5 rounded-lg bg-stone-900 hover:bg-rose-950/60 border border-stone-800 hover:border-rose-500/40 text-[10px] text-stone-400 hover:text-rose-300">
+                            Clear
+                        </button>
+                    </div>
+                `;
+                keyMapList.appendChild(row);
+            });
+        }
+
+        keyMapList.addEventListener('click', (e) => {
+            const assignBtn = e.target.closest('.assign-key-btn');
+            if (assignBtn) {
+                const id = Number(assignBtn.dataset.mapId);
+                listeningSwaraId = (listeningSwaraId === id) ? null : id;
+                renderKeyMapModal();
+                return;
+            }
+
+            const clearBtn = e.target.closest('.clear-key-btn');
+            if (clearBtn) {
+                const id = Number(clearBtn.dataset.clearId);
+                userKeyMap[id] = "";
+                listeningSwaraId = null;
+                saveKeyMappings();
+                generateSwaraDataForCurrentKey();
+                buildGrid();
+                renderKeyMapModal();
+            }
+        });
+
+        document.getElementById('openKeyMapBtn').addEventListener('click', () => {
+            stopNote();
+            listeningSwaraId = null;
+            renderKeyMapModal();
+            keyMapModal.classList.remove('hidden');
+            keyMapModal.classList.add('flex');
+        });
+
+        function closeKeyModal() {
+            listeningSwaraId = null;
+            keyMapModal.classList.add('hidden');
+            keyMapModal.classList.remove('flex');
+        }
+
+        document.getElementById('closeKeyMapBtn').addEventListener('click', closeKeyModal);
+
+        document.getElementById('resetDefaultKeysBtn').addEventListener('click', () => {
+            listeningSwaraId = null;
+            resetKeyMappingsToDefault(true);
+            generateSwaraDataForCurrentKey();
+            buildGrid();
+            renderKeyMapModal();
+        });
+
+        document.getElementById('clearAllKeysBtn').addEventListener('click', () => {
+            listeningSwaraId = null;
+            SWARA_TEMPLATES.forEach(t => { userKeyMap[t.id] = ""; });
+            saveKeyMappings();
+            generateSwaraDataForCurrentKey();
+            buildGrid();
+            renderKeyMapModal();
+        });
+
+        // Keyboard Listener (Handles both Key Mapping Modal & Live Playing)
+        const pressedKeys = new Set();
+
+        window.addEventListener('keydown', (e) => {
+            if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+            const key = e.key.toLowerCase();
+
+            // If Key Mapping Modal is open and waiting for a key press
+            if (!keyMapModal.classList.contains('hidden')) {
+                if (e.key === 'Escape') {
+                    e.preventDefault();
+                    if (listeningSwaraId !== null) {
+                        listeningSwaraId = null;
+                        renderKeyMapModal();
+                    } else {
+                        closeKeyModal();
+                    }
+                    return;
+                }
+
+                if (listeningSwaraId !== null) {
+                    e.preventDefault();
+                    if (e.key === 'Backspace' || e.key === 'Delete') {
+                        userKeyMap[listeningSwaraId] = "";
+                    } else if (ALLOWED_KEYS.has(key)) {
+                        // Remove this key from any other swara so there are no duplicate conflicts
+                        Object.keys(userKeyMap).forEach(kId => {
+                            if (userKeyMap[kId] === key) userKeyMap[kId] = "";
+                        });
+                        userKeyMap[listeningSwaraId] = key;
+                    } else {
+                        return;
+                    }
+                    listeningSwaraId = null;
+                    saveKeyMappings();
+                    generateSwaraDataForCurrentKey();
+                    buildGrid();
+                    renderKeyMapModal();
+                }
+                return;
+            }
+
+            // Live Playing
+            if (e.repeat) return;
+            if (!ALLOWED_KEYS.has(key)) return;
+
+            const swara = SWARAS.find(s => s.key === key);
+            if (swara) {
+                e.preventDefault();
+                pressedKeys.add(key);
+                startNote(swara.id);
+            }
+        });
+
+        window.addEventListener('keyup', (e) => {
+            const key = e.key.toLowerCase();
+            if (pressedKeys.has(key)) {
+                pressedKeys.delete(key);
+                if (pressedKeys.size > 0) {
+                    const lastKey = Array.from(pressedKeys).pop();
+                    const prev = SWARAS.find(s => s.key === lastKey);
+                    if (prev) startNote(prev.id);
+                } else if (!latchMode) {
+                    stopNote();
+                }
+            }
+        });
+
+        window.addEventListener('blur', () => {
+            pressedKeys.clear();
+            if (!latchMode) stopNote();
+        });
+
+        /*************************************************************************
+         * 6. TOP BAR CONTROLS & SLIDERS
+         *************************************************************************/
+        document.getElementById('bansuriKeySelect').addEventListener('change', (e) => {
+            currentKey = e.target.value;
+            generateSwaraDataForCurrentKey();
+            buildGrid();
+            if (engine.isPlaying) stopNote();
+            if (engine.droneActive) {
+                engine.toggleDrone();
+                engine.toggleDrone();
+            }
+        });
+
+        document.getElementById('volSlider').addEventListener('input', (e) => {
+            const v = Number(e.target.value);
+            document.getElementById('volLabel').textContent = `${v}%`;
+            engine.setVolume(v / 100);
+        });
+
+        document.getElementById('airSlider').addEventListener('input', (e) => {
+            const v = Number(e.target.value);
+            document.getElementById('airLabel').textContent = `${v}%`;
+            engine.airSetting = v / 100;
+            if (engine.isPlaying && engine.ctx) {
+                engine.airGain.gain.setTargetAtTime(engine.airSetting * 0.12, engine.ctx.currentTime, 0.02);
+            }
+        });
+
+        document.getElementById('glideSlider').addEventListener('input', (e) => {
+            const v = Number(e.target.value);
+            document.getElementById('glideLabel').textContent = `${v}ms`;
+            engine.glideTime = v / 1000;
+        });
+
+        const droneBtn = document.getElementById('droneBtn');
+        const droneBtnMobile = document.getElementById('droneBtnMobile');
+        function toggleDroneHandler() {
+            const on = engine.toggleDrone();
+            droneBtn.textContent = on ? 'Drone: ON' : 'Drone: OFF';
+            droneBtnMobile.textContent = on ? 'Drone: ON' : 'Drone: OFF';
+            droneBtn.classList.toggle('bg-amber-600', on);
+            droneBtn.classList.toggle('text-black', on);
+            droneBtnMobile.classList.toggle('bg-amber-600', on);
+            droneBtnMobile.classList.toggle('text-black', on);
+        }
+        droneBtn.addEventListener('click', toggleDroneHandler);
+        droneBtnMobile.addEventListener('click', toggleDroneHandler);
+
+        const holdModeBtn = document.getElementById('holdModeBtn');
+        holdModeBtn.addEventListener('click', () => {
+            latchMode = !latchMode;
+            holdModeBtn.textContent = latchMode ? 'Mode: Tap Lock' : 'Mode: Hold';
+            holdModeBtn.classList.toggle('bg-amber-600', latchMode);
+            holdModeBtn.classList.toggle('text-black', latchMode);
+            if (!latchMode) stopNote();
+        });
+    </script>
+</body>
+</html>
